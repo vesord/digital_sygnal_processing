@@ -10,9 +10,9 @@ scf(0);		//	select (or create) current figure
 clf();		//	clear figure
 
 N = 1;
-A = N + 1;
+A = N + 10;
 f = N * 5;
-Fs = f * 10;
+Fs = f * 100;
 dt = 1 / Fs; 
 sigma = 0.1 * N + 1;
 mu = (-1)^N * 0.2;

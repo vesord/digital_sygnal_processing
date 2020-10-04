@@ -22,7 +22,13 @@
 // E = -1/2 * N
 //
 // f = -1/2 * N * t^2 + 4 * N
+// f = N * ( -(t^2) / 2 + 4)
 //
+// As phase is an integral of frequency we found:
+// \fi = N * (-1/2 * t^3 / 3 + 4 * t)
+//
+
+
 // As function is lineary decreasing then max(f) would be at t = 0.
 // f_max = 4 * N
 //
@@ -42,13 +48,14 @@ A = 1;
 f_max = 4 * N;
 t_max = sqrt(8);
 	
-Fs = f_max * 10;
+Fs = f_max * 100;
 dt = 1 / Fs;
 t = 0:dt:t_max;
 
 f = -1/2 .* N .* t .* t + 4 .* N;
+fi = N .* (-1/2 .* t^3 / 3 + 4 .* t);
 
-sint_varf = A * sin(2 .* %pi .* f .* t);
+sint_varf = A * sin(2 .* %pi .* fi);
 
 plot(t, sint_varf);
 xtitle('Harmonical sygnal with variable frequency', 't, s', 'Amplitude');
