@@ -5,7 +5,7 @@
 a = 1:1:20;
 b = 1:1:20;
 
-cov_matlab = xcorr(a, b, 'none');
+cov_matlab = xcorr(a, b, 'biased');
 cov_my_FFT = myCOV_FFT(a, b);
 
 figure();
